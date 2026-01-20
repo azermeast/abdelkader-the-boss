@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💱 تطبيق صرف العملات المتقدم</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="header-top">
+        <h1>💱 أسعار العملات المتقدمة</h1>
+        <button id="toggle-theme">🌙/☀️ تبديل الوضع</button>
+    </div>
+    <p>بورصة • بنوك • سوق غير رسمي</p>
+</header>
+
+<main>
+    <!-- قسم العملات الرسمية -->
+    <section id="currency-section"></section>
+
+    <!-- قسم محول العملات -->
+    <section id="converter-section">
+        <h2>🔁 محول العملات</h2>
+        <div class="converter-inputs">
+            <input type="number" id="amount" placeholder="المبلغ">
+            <select id="from-currency"></select>
+            <select id="to-currency"></select>
+            <button onclick="convert()">تحويل</button>
+        </div>
+        <p id="result"></p>
+    </section>
+
+    <!-- قسم السوق غير الرسمي -->
+    <section id="blackmarket-section">
+        <h2>📉 سعر السوق غير الرسمي</h2>
+        <div class="bm-inputs">
+            <input type="text" id="bm-currency" placeholder="رمز العملة (مثل USD)">
+            <input type="number" id="bm-buy" placeholder="سعر الشراء">
+            <input type="number" id="bm-sell" placeholder="سعر البيع">
+            <button onclick="saveBlackMarket()">حفظ</button>
+        </div>
+    </section>
+
+    <!-- قسم الرسوم البيانية -->
+    <section id="chart-section">
+        <h2>📊 تغيّر الأسعار</h2>
+        <canvas id="priceChart"></canvas>
+    </section>
+</main>
+
+<footer>
+    <p>تم التطوير بواسطة فريق مبتكر • كل شيء مجاني باستخدام Exchangerate.host</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
